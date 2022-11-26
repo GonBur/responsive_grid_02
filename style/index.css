@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*propiedad html*/
+html{
+    height: 100%;
+}
+
+/*cuerpo de la pagina*/
+body{
+    min-height: 100%;
+}
+
+/*para todos los estilos del body*/
+.contenedor>*{
+    box-shadow: -1px 1px 7px 0px  rgb(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+}
+/*clase del body*/
+.contenedor{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "aside1"
+    "aside2"
+    "footer"; 
+    gap: 10px;  
+}
+
+/*cabecera*/
+.header{
+    grid-area: header;
+    background-color: blue;
+    color: white;
+}
+
+/*menu nave*/
+.nav{
+    grid-area: nav;
+    background-color: pink;
+}
+
+/*cuerpo*/
+.main{
+    grid-area: main;
+    background-color: yellow;
+}
+
+/*aside*/
+.aside1{
+    grid-area: aside1;
+    background-color: salmon;
+}
+.aside2{
+    grid-area: aside2;
+    background-color: rgb(20, 183, 220);
+}
+
+
+/*pie pagina*/
+.footer{
+    grid-area: footer;
+    background-color: darkcyan;
+    color: white;
+}
+
+/*para smartphone*/
+@media (max-width:767px){
+    .contenedor{
+    grid-template-rows: 100px 50px 200px 100px 100px 90px;   
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "aside1 "
+        "aside2"
+        "footer";
+    }
+} 
+
+
+/*para tablet*/
+@media (min-width:767px) and (max-width:1023px){
+    .contenedor{
+    grid-template-rows: 100px 50px 350px 150px 150px 90px;   
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "aside1 "
+        "aside2"
+        "footer";
+    }
+} 
+
+
+/*para escritorio*/
+@media (min-width:1024px){
+    .contenedor{
+            grid-template-rows: 100px 50px auto 100px;   
+                grid-template-areas: 
+                "header header header"
+                "nav nav nav"
+                "aside1 main aside2"
+                "footer footer footer";
+
+     } 
+}
+
+
